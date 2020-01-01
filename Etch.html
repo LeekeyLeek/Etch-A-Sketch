@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <!--
-NEEDS: 
--Program needs to automatically generate grid based on input number (like 16x16)
-within alligned space.
--
+To Do:
+-Make Resize button delete entire grid and generate new one within createGrid()
+
+-Create a button that clears the current board of drawings when clicked
+
+Bugs:
+-Newly created boards try to fit within original board.
+Going from 64x64 to 16x16 doesn't fill up the grid space.
+
 -->
 
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 <body>
 
-<div class="grid-container"></div>
+    <button class="clear">Clear</button>
+    <button class="resize">Resize</button>
+    <div class="grid-container"></div>
 
 
 
