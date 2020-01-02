@@ -1,3 +1,12 @@
+<!--
+Current:
+-Should be able to hold mouse button to paint 
+event triggers on mousedown, stop on mouseup
+
+
+Implemented ability to color in squares. Created color button selectors. 
+-->
+
 <!DOCTYPE html>
 
 <html>
@@ -5,9 +14,16 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 <body>
+    <div class="color-selection">
+        <button class="colors" id="red">Red</button>
+        <button class="colors" id="blue">Blue</button>
+        <button class="colors" id="green">Green</button>
+        <button class="colors" id="black">Black</button>
+    </div>
 
     <button class="clear">Clear</button>
     <button class="resize">Resize</button>
+
     <div class="grid-container"></div>
 
 
