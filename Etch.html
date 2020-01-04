@@ -1,32 +1,29 @@
-<!--
-Current:
--Should be able to hold mouse button to paint 
-event triggers on mousedown, stop on mouseup
-
-
-Implemented ability to color in squares. Created color button selectors. 
--->
-
 <!DOCTYPE html>
 
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="reset.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <h1>Etch-a-Sketch</h1>
     </head>
 <body>
+
     <div class="color-selection">
-        <button class="colors" id="red">Red</button>
-        <button class="colors" id="blue">Blue</button>
-        <button class="colors" id="green">Green</button>
-        <button class="colors" id="black">Black</button>
+        <button class="colors" id="red"></button>
+        <button class="colors" id="blue"></button>
+        <button class="colors" id="green"></button>
+        <button class="colors" id="black"></button>
+        <button class="colors" id="white"></button>
     </div>
 
-    <button class="clear">Clear</button>
-    <button class="resize">Resize</button>
-
+    <div class="option-selection">
+        <button class="options" id="clear">Clear</button>
+        <button class="options" id="resize">Resize</button>
+    </div>
+    
     <div class="grid-container"></div>
 
-
+    
 
 <script src="Etch.js"></script>
 </body>

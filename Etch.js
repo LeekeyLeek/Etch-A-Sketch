@@ -1,7 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
 let selectedColor = 'black'
+let mousePressed = false
 
-//v Needs updated later v
 function defaultGrid() {
     for (let i = 0; i < 256; i++) {
 
@@ -9,13 +9,65 @@ function defaultGrid() {
         gridSquare.className = 'grid-square';
         gridContainer.style.gridTemplateColumns = 'repeat(16, 1fr)';
         gridContainer.style.gridTemplateRows = 'repeat(16, 1fr)';
-    
+        let coloredIn = false
+        
         gridSquare.addEventListener("mouseover", function() {
-            gridSquare.style.backgroundColor = 'grey';
+            switch (coloredIn) {
+                case true:
+                    break;
+                case false:
+                    return gridSquare.style.backgroundColor = 'grey';
+            }
         });
         gridSquare.addEventListener("mouseout", function() {
-            gridSquare.style.backgroundColor = 'white';
+            switch (coloredIn) {
+                case true:
+                    break;
+                case false:
+                    return gridSquare.style.backgroundColor = 'initial';
+            }
         });
+        
+        gridSquare.addEventListener("mousedown", function(e) {
+               
+            mousePressed = true
+
+            if (mousePressed = true) {
+                switch(selectedColor) {
+
+                    case 'black':
+                        gridSquare.style.backgroundColor = 'black';
+                        return coloredIn = true
+                    
+        
+                    case 'red':
+                        gridSquare.style.backgroundColor = 'red';
+                        return coloredIn = true
+                    
+        
+                    case 'blue':
+                        gridSquare.style.backgroundColor = 'blue';
+                        return coloredIn = true
+                    
+        
+                    case 'green':
+                        gridSquare.style.backgroundColor = 'green';
+                        return coloredIn = true
+                    
+                    case 'white':
+                        gridSquare.style.backgroundColor = 'white';
+                        return coloredIn = true
+            
+                }} else {
+                    return;
+                }
+
+        });
+
+        gridSquare.addEventListener("mouseup", function(e) {
+            mousePressed = false
+        });
+
         gridContainer.appendChild(gridSquare)
     };
 };
@@ -40,6 +92,7 @@ function createGrid() {
             let gridSquare = document.createElement('div');
             gridSquare.className = 'grid-square';
             let coloredIn = false
+            
 
             gridSquare.addEventListener("mouseover", function(e) {
                 
@@ -63,28 +116,42 @@ function createGrid() {
             
             gridSquare.addEventListener("mousedown", function(e) {
                
-                switch(selectedColor) {
+                mousePressed = true
 
-                    case 'black':
-                        gridSquare.style.backgroundColor = 'black';
-                        break;
+                if (mousePressed = true) {
+                    switch(selectedColor) {
+
+                        case 'black':
+                            gridSquare.style.backgroundColor = 'black';
+                            return coloredIn = true
+                        
             
-                    case 'red':
-                        gridSquare.style.backgroundColor = 'red';
-                        break;
+                        case 'red':
+                            gridSquare.style.backgroundColor = 'red';
+                            return coloredIn = true
+                        
             
-                    case 'blue':
-                        gridSquare.style.backgroundColor = 'blue';
-                        break;
+                        case 'blue':
+                            gridSquare.style.backgroundColor = 'blue';
+                            return coloredIn = true
+                        
             
-                    case 'green':
-                        gridSquare.style.backgroundColor = 'green';
-                        break;
+                        case 'green':
+                            gridSquare.style.backgroundColor = 'green';
+                            return coloredIn = true
+
+                        case 'white':
+                            gridSquare.style.backgroundColor = 'white';
+                            return coloredIn = true
                 
-                };
+                    }} else {
+                        return;
+                    }
 
-                return coloredIn = true
+            });
 
+            gridSquare.addEventListener("mouseup", function(e) {
+                mousePressed = false
             });
 
             gridContainer.appendChild(gridSquare)
@@ -117,14 +184,19 @@ blackButton.addEventListener('click', function(e) {
     return selectedColor = 'black'
 });
 
-
-let clearButton = document.querySelector('.clear')
-clearButton.addEventListener('click', function(e) {
-let erase = document.querySelectorAll('.grid-square')
-erase.style.backgroundColor ='white';
+let whiteButton = document.querySelector('#white')
+whiteButton.addEventListener('click', function(e) {
+    console.log('current color is white')
+    return selectedColor = 'white'
 });
 
-let resizeButton = document.querySelector('.resize')
+let clearButton = document.querySelector('#clear')
+clearButton.addEventListener('click', function(e) {
+const erase = document.querySelectorAll('.grid-square')
+erase.forEach(erase => erase.style.backgroundColor = '')
+});
+
+let resizeButton = document.querySelector('#resize')
 resizeButton.addEventListener('click', function(e) {
 eraseGrid()
 createGrid()
