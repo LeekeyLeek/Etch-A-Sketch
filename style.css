@@ -1,12 +1,16 @@
-body {
-    background-image: url("https://wallpaperplay.com/walls/full/4/7/4/17343.jpg");
+body, html {
+    background-color: #6b6a6a;
     background-repeat: no-repeat;
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-    font-family: 'Gochi Hand', cursive, Arial, Helvetica, sans-serif;
     font-size: 80px;
     text-align: center;
+    margin-top: 0;
+    background-color: rgb(61, 60, 60);
     color: white;
     margin: 17px 0px 0px 0px;
 }
@@ -25,6 +29,7 @@ h1 {
     border: 5px solid #3e3a3a;
     border-radius: 5px;
     margin: auto;
+    box-shadow: 10px 10px 5px black;
 }
 
 .grid-square {
@@ -34,21 +39,22 @@ h1 {
 .option-selection {
     display: block;
     text-align: center;
+    margin-bottom: 2.5em;
 }
 
 .options {
-    background-color: rgb(20, 166, 211);
+    background-color: rgb(66, 66, 66);
     border-radius: 6px;
     padding: 6px 40px 6px 40px;
     margin: 0px 10px 0px 10px;
     font-size: 20px;
     color: white;
-    font-family: 'Bangers', cursive, Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
+    box-shadow: 3px 3px 2px black;
 }
 
 .options:hover {
-    background-color: rgb(22, 173, 219);
+    background-color: rgb(54, 54, 54);
     transform: scale(1.07);
 }
 
@@ -63,8 +69,8 @@ h1 {
     width: 40px;
     padding: 20px 0px 20px 0px;
     border-radius: 100px;
-    border: 1px solid white;
-    
+    border: 2px solid snow;
+    box-shadow: 3px 3px 2px black;
 }
 
 .colors:hover {
