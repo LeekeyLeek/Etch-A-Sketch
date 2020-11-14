@@ -64,6 +64,38 @@ function defaultGrid() {
 
         });
 
+        gridSquare.addEventListener('mousemove', function(e){
+            if (mousePressed === true) {
+                switch(selectedColor) {
+
+                    case 'black':
+                        gridSquare.style.backgroundColor = 'black';
+                        return coloredIn = true
+                    
+        
+                    case 'red':
+                        gridSquare.style.backgroundColor = 'red';
+                        return coloredIn = true
+                    
+        
+                    case 'blue':
+                        gridSquare.style.backgroundColor = 'blue';
+                        return coloredIn = true
+                    
+        
+                    case 'green':
+                        gridSquare.style.backgroundColor = 'green';
+                        return coloredIn = true
+                    
+                    case 'white':
+                        gridSquare.style.backgroundColor = 'white';
+                        return coloredIn = true
+            
+                }} else {
+                    return;
+                }
+        })
+
         gridSquare.addEventListener("mouseup", function(e) {
             mousePressed = false
         });
@@ -151,12 +183,46 @@ function createGrid() {
                         }} else {
                             return;
                         }
+                    return mousePressed = true
     
                 });
     
                 gridSquare.addEventListener("mouseup", function(e) {
-                    mousePressed = false
+                   return mousePressed = false
                 });
+                
+                gridSquare.addEventListener('mousemove', function(e){
+                    
+                    if (mousePressed === true) {
+                        switch(selectedColor) {
+        
+                            case 'black':
+                                gridSquare.style.backgroundColor = 'black';
+                                return coloredIn = true
+                            
+                
+                            case 'red':
+                                gridSquare.style.backgroundColor = 'red';
+                                return coloredIn = true
+                            
+                
+                            case 'blue':
+                                gridSquare.style.backgroundColor = 'blue';
+                                return coloredIn = true
+                            
+                
+                            case 'green':
+                                gridSquare.style.backgroundColor = 'green';
+                                return coloredIn = true
+                            
+                            case 'white':
+                                gridSquare.style.backgroundColor = 'white';
+                                return coloredIn = true
+                    
+                        }} else {
+                            return;
+                        }
+                })
     
                 gridContainer.appendChild(gridSquare)
             };
